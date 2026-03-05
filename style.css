@@ -268,15 +268,23 @@ body {
   font-style: italic;
 }
 
-.hero-content p {
+/* .hero-content p {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.82);
   margin-bottom: 2.5rem;
   max-width: 560px;
   margin-left: auto;
   margin-right: auto;
+} */
+.hero-content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(255, 253, 253);
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 .hero-actions {
   display: flex;
   gap: 1rem;
