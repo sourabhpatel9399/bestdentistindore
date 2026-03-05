@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Dr. Pooja — Pearly White Dental Clinic Indore</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <meta name="description" content="Meet Dr. Pooja — founder and lead dentist at Pearly White Dental Clinic, Indore. Learn about her qualifications, philosophy, and commitment to your smile.">
+  <meta name="theme-color" content="#0891b2">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* About-specific */
+    .about-intro {
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-frame {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 3/4;
+    }
+    .about-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-badge-float {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .about-badge-float .num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      display: block;
+      line-height: 1;
+    }
+    .about-badge-float .lbl {
+      font-size: 0.75rem;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+    .about-text .section-label { justify-content: flex-start; }
+    .about-text h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--dark);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .about-creds {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.75rem 0;
+    }
+    .cred-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .cred-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .cred-item strong { display: block; font-size: 0.875rem; color: var(--dark); }
+    .cred-item span { font-size: 0.82rem; color: var(--muted); }
+
+    /* Values */
+    .values { background: var(--light); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+      border-color: rgba(8,145,178,0.2);
+    }
+    .value-icon {
+      width: 52px; height: 52px;
+      background: var(--accent);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 1.25rem;
+      transition: var(--transition);
+    }
+    .value-card:hover .value-icon {
+      background: var(--primary);
+      color: white;
+    }
+    .value-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .value-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+    /* Team / Dr card */
+    .clinic-section { background: var(--white); }
+    .clinic-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .clinic-text h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    .clinic-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .stat-box {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-box .n {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--primary);
+      display: block;
+    }
+    .stat-box .l { font-size: 0.8rem; color: var(--muted); }
+    .clinic-img-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .clinic-img-col img {
+      width: 100%;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      aspect-ratio: 1;
+    }
+    .clinic-img-col img:first-child {
+      grid-column: span 2;
+      aspect-ratio: 2/1;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-wrap { max-width: 400px; margin: 0 auto; }
+      .about-text .section-label { justify-content: center; }
+      .about-text { text-align: center; }
+      .about-creds { align-items: flex-start; text-align: left; }
+      .clinic-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">
+    <img src="logo.png" alt="Pearly White" class="brand-logo">
+    <div class="brand-text">
+      <span class="brand-name">Pearly White</span>
+      <span class="brand-sub">Dental Clinic</span>
+    </div>
+  </a>
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="about.html" style="color:var(--primary);">About</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="index.html#location">Location</a></li>
+    <li class="nav-cta"><a href="index.html#contact"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917694959759" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-badge"><i class="fas fa-user-md"></i> Meet the Doctor</div>
+  <h1>About Dr. Pooja</h1>
+  <p>The passionate dentist behind Indore's most trusted smiles</p>
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <span>About</span>
+  </nav>
+</div>
+
+<!-- ABOUT INTRO -->
+<section class="about-intro">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <div class="about-img-frame">
+        <img src="dr-pooja.jpg" alt="Dr. Pooja — Pearly White Dental Clinic Indore" loading="lazy">
+      </div>
+      <div class="about-badge-float">
+        <span class="num">10+</span>
+        <span class="lbl">Years of Excellence</span>
+      </div>
+    </div>
+
+    <div class="about-text reveal reveal-delay-2">
+      <div class="section-label"><span>Our Dentist</span></div>
+      <h2>Dr. Pooja<br>— Where Skill Meets Care</h2>
+      <p>Welcome to Dr. Pooja's Pearly White Dental Clinic, where your smile is our top priority. Located in the heart of Indore, our state-of-the-art clinic offers comprehensive oral care in a warm, welcoming environment.</p>
+      <p>Led by Dr. Pooja — a renowned dentist with a passion for excellence — our dedicated team uses the latest technology and techniques to deliver exceptional dental services tailored to your individual needs.</p>
+
+      <div class="about-creds">
+        <div class="cred-item">
+          <div class="cred-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <strong>BDS &amp; MDS — Prosthodontics</strong>
+            <span>Postgraduate dental qualification with specialization</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon"><i class="fas fa-award"></i></div>
+          <div>
+            <strong>Certified Implantologist</strong>
+            <span>Advanced training in dental implants &amp; oral surgery</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon"><i class="fas fa-certificate"></i></div>
+          <div>
+            <strong>Invisalign &amp; Aligner Certified</strong>
+            <span>Specialist in clear aligner orthodontic therapy</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon"><i class="fas fa-hospital"></i></div>
+          <div>
+            <strong>Member — Indian Dental Association</strong>
+            <span>Registered and recognized by IDA, Madhya Pradesh</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="index.html#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+        <a href="tel:+917694959759" class="btn" style="background:var(--light); color:var(--dark); border:1.5px solid var(--border);"><i class="fas fa-phone-alt"></i> Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="section-title reveal">
+    <div class="section-label"><span>Our Philosophy</span></div>
+    <h2>What We Stand For</h2>
+    <p>Every decision at our clinic is guided by one purpose — your wellbeing</p>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal reveal-delay-1">
+      <div class="value-icon"><i class="fas fa-heart"></i></div>
+      <h3>Patient-First Approach</h3>
+      <p>We listen carefully to your concerns and tailor each treatment to your comfort and unique needs.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-2">
+      <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+      <h3>Uncompromising Hygiene</h3>
+      <p>Strict sterilisation protocols and single-use instruments ensure your safety at every visit.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-3">
+      <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+      <h3>Continuous Learning</h3>
+      <p>We stay current with the latest research, techniques, and dental technology advancements.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-4">
+      <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+      <h3>Affordable Quality</h3>
+      <p>World-class dental care at transparent, fair prices — because great smiles are for everyone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLINIC SECTION -->
+<section class="clinic-section">
+  <div class="clinic-inner">
+    <div class="clinic-text reveal">
+      <div class="section-label"><span>Our Clinic</span></div>
+      <h2>A Modern Clinic Built Around You</h2>
+      <p>Our clinic is designed to make you feel at ease from the moment you walk in. Bright, clean, and equipped with advanced dental technology — this is dentistry as it should be.</p>
+      <p>From digital X-rays that reduce radiation to air-conditioned treatment rooms and kid-friendly décor, every detail is thoughtfully chosen with your comfort in mind.</p>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="n">5000+</span>
+          <span class="l">Happy Patients</span>
+        </div>
+        <div class="stat-box">
+          <span class="n">15+</span>
+          <span class="l">Treatments</span>
+        </div>
+        <div class="stat-box">
+          <span class="n">4.9★</span>
+          <span class="l">Google Rating</span>
+        </div>
+        <div class="stat-box">
+          <span class="n">10+</span>
+          <span class="l">Years Open</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="clinic-img-col reveal reveal-delay-2">
+      <img src="banner1.jpg" alt="Pearly White Dental Clinic Interior" loading="lazy">
+      <img src="banner2.jpg" alt="Clinic Treatment Room" loading="lazy">
+      <img src="banner3.jpg" alt="Dental Equipment" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); padding: 4rem 2rem; text-align:center; color:white;">
+  <div class="section-label" style="justify-content:center; color:rgba(255,255,255,0.8);">
+    <span>Get Started Today</span>
+  </div>
+  <h2 style="font-family:'DM Serif Display',serif; font-size:2.2rem; font-weight:400; margin: 0.5rem 0 1rem;" class="reveal">
+    Ready for a Healthier, Brighter Smile?
+  </h2>
+  <p style="color:rgba(255,255,255,0.75); max-width:480px; margin:0 auto 2rem;" class="reveal">
+    Book your appointment today and take the first step toward the smile you deserve.
+  </p>
+  <div class="reveal" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+    <a href="index.html#contact" class="btn" style="background:white; color:var(--primary-dark);">
+      <i class="fas fa-calendar-check"></i> Book Appointment
+    </a>
+    <a href="https://wa.me/917694959759" target="_blank" class="btn btn-outline">
+      <i class="fab fa-whatsapp"></i> WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Pearly White">
+      <h3>Pearly White Dental Clinic</h3>
+      <p>Your trusted partner in oral health. We combine compassionate care with the latest dental technology to give you the smile you deserve.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/917694959759" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/pearlywhitedentalclinic2021/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Root Canal</a></li>
+        <li><a href="index.html#services">Dental Implants</a></li>
+        <li><a href="index.html#services">Teeth Whitening</a></li>
+        <li><a href="index.html#services">Braces</a></li>
+        <li><a href="index.html#services">Kids Dentistry</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+917694959759">+91 76949 59759</a></li>
+        <li><a href="mailto:info@pearlywhite.in">info@pearlywhite.in</a></li>
+        <li><a href="https://www.pearlywhite.in">www.pearlywhite.in</a></li>
+        <li><a href="index.html#location">Limbodi, Indore MP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Dr. Pooja's Pearly White Dental Clinic. All rights reserved.</span>
+    <span>Website by <a href="https://www.webplans.in" target="_blank">Web Plans™</a></span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
