@@ -405,6 +405,28 @@ section {
 .services {
   background: var(--light);
 }
+
+.service-img-wrap {
+  width: calc(100% + 4rem);
+  height: 180px;
+  margin: -2rem -2rem 1.25rem -2rem;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.service-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img-wrap img {
+  transform: scale(1.07);
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
