@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team — Pearly White Dental Clinic Indore</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <meta name="description" content="Meet the expert dental team at Dr. Pooja's Pearly White Dental Clinic, Indore.">
+  <meta name="theme-color" content="#0891b2">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .team-section { background: var(--white); }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(8,145,178,0.2);
+    }
+
+    .team-img-wrap {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+      background: var(--light);
+    }
+
+    .team-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .team-card:hover .team-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    /* Placeholder when no image */
+    .team-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent), rgba(8,145,178,0.08));
+      color: var(--primary);
+      gap: 1rem;
+    }
+
+    .team-img-placeholder i {
+      font-size: 4rem;
+      opacity: 0.4;
+    }
+
+    .team-img-placeholder span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .team-card-body {
+      padding: 1.75rem;
+    }
+
+    .team-card-body h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-designation {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .team-exp {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .team-exp i { color: var(--gold); }
+
+    .team-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .team-card-body p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* Coming soon card */
+    .team-card.empty {
+      border-style: dashed;
+      border-color: var(--border);
+      box-shadow: none;
+    }
+
+    .team-card.empty:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .empty-placeholder {
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--light);
+      gap: 1rem;
+      color: var(--muted);
+    }
+
+    .empty-placeholder i {
+      font-size: 3rem;
+      opacity: 0.25;
+    }
+
+    .empty-placeholder span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">
+    <img src="logo.png" alt="Pearly White" class="brand-logo">
+    <div class="brand-text">
+      <span class="brand-name">Pearly White</span>
+      <span class="brand-sub">Dental Clinic</span>
+    </div>
+  </a>
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="team.html" style="color:var(--primary);">Our Team</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="index.html#location">Location</a></li>
+    <li class="nav-cta"><a href="index.html#contact"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917694959759" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-badge"><i class="fas fa-user-md"></i> Meet The Experts</div>
+  <h1>Our Team</h1>
+  <p>Skilled, compassionate, and dedicated to your smile</p>
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <span>Our Team</span>
+  </nav>
+</div>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="section-title reveal">
+    <div class="section-label"><span>The Experts</span></div>
+    <h2>The People Behind Your Smile</h2>
+    <p>A team of highly qualified dental professionals committed to excellence</p>
+  </div>
+
+  <div class="team-grid">
+
+    <!-- Doctor 1 — Dr. Pooja -->
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-img-wrap">
+        <img src="dr-pooja.jpg" alt="Dr. Pooja">
+      </div>
+      <div class="team-card-body">
+        <h3>Dr. Pooja</h3>
+        <div class="team-designation"><i class="fas fa-tooth"></i> Founder & Lead Dentist</div>
+        <div class="team-exp"><i class="fas fa-star"></i> 10+ Years of Experience</div>
+        <div class="team-divider"></div>
+        <p>Dr. Pooja is the founder and lead dentist at Pearly White Dental Clinic. With over 10 years of clinical excellence, she is passionate about delivering compassionate, precision-driven dental care. She specializes in Endodontics, cosmetic dentistry, and complete smile makeovers. Her patient-first philosophy and dedication to using the latest dental technology have made Pearly White Indore's most trusted dental clinic. Under her leadership, the clinic has served over 5000 happy patients with outstanding results.</p>
+      </div>
+    </div>
+
+    <!-- Doctor 2 — Dr. Atul Kala -->
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-img-wrap">
+        <img src="doctor1.jpeg" alt="Dr. Atul Kala">
+      </div>
+      <div class="team-card-body">
+        <h3>Dr. Atul Kala</h3>
+        <div class="team-designation"><i class="fas fa-tooth"></i> Oral & Maxillofacial Surgeon</div>
+        <div class="team-exp"><i class="fas fa-star"></i> 10+ Years of Experience</div>
+        <div class="team-divider"></div>
+        <p>Dr. Atul Kala is an experienced Oral & Maxillofacial Surgeon with over 10 years of clinical expertise in advanced dental and facial surgical procedures. He specializes in treatments such as dental implants, wisdom tooth removal, facial trauma management, and other complex oral surgeries. Known for his precision and patient-centered approach, Dr. Kala focuses on providing safe, comfortable, and modern dental care using advanced techniques and equipment. His goal is to ensure every patient receives the highest standard of treatment with minimal discomfort and long-lasting results.</p>
+      </div>
+    </div>
+
+    <!-- Doctor 3 — Dr. Bhuwan Saklecha -->
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-img-wrap">
+        <img src="doctor2.jpeg" alt="Dr. Bhuwan Saklecha">
+      </div>
+      <div class="team-card-body">
+        <h3>Dr. Bhuwan Saklecha</h3>
+        <div class="team-designation"><i class="fas fa-teeth-open"></i> Orthodontist</div>
+        <div class="team-exp"><i class="fas fa-star"></i> 20+ Years of Experience</div>
+        <div class="team-divider"></div>
+        <p>Dr. Bhuwan Saklecha is a highly accomplished Orthodontist with over 20 years of expertise in creating perfectly aligned smiles. He holds a B.D.S and M.D.S in Orthodontics and is a Certified Invisalign Provider — bringing world-class aligner therapy to Indore. He currently serves as Professor and Head of Department of Orthodontics at Guru Govind Singh Dental College, Burhanpur. His vast academic and clinical experience ensures that every patient receives the most advanced and evidence-based orthodontic treatment available.</p>
+      </div>
+    </div>
+
+    <!-- Doctor 4 — Dr. Suyash Jain -->
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-img-wrap">
+        <img src="doctor3.jpeg" alt="Dr. Suyash Jain">
+      </div>
+      <div class="team-card-body">
+        <h3>Dr. Suyash Jain</h3>
+        <div class="team-designation"><i class="fas fa-child"></i> Pedodontist & Child Specialist</div>
+        <div class="team-exp"><i class="fas fa-star"></i> 13+ Years of Experience</div>
+        <div class="team-divider"></div>
+        <p>Dr. Suyash Jain is a dedicated Pedodontist and Child Dental Specialist with over 13 years of experience in caring for young smiles. He holds a B.D.S and M.D.S in Pedodontics and is known for his exceptionally gentle and child-friendly approach that puts even the most anxious kids at ease. Dr. Jain focuses on preventive dental care, early orthodontic intervention, and building positive dental habits in children from an early age — ensuring a lifetime of healthy, confident smiles.</p>
+      </div>
+    </div>
+
+
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-img-wrap">
+        <img src="doctor5.jpeg" alt="Dr. Suyash Jain">
+      </div>
+      <div class="team-card-body">
+        <h3>Prof.Dr.Hemant Gadge.</h3>
+        <div class="team-designation"><i class="fas fa-child"></i> Pedodontist & Child Specialist</div>
+        <div class="team-exp"><i class="fas fa-star"></i> 13+ Years of Experience</div>
+        <div class="team-divider"></div>
+        <p>Dr. Hemant Gadge is a dedicated MDS Prosthodontist and Implantologist with 13 years of experience in providing quality dental care. He holds a B.D.S and M.D.S degree and is known for his gentle and patient-friendly approach that helps patients feel comfortable during treatment.
+
+Dr. Gadge focuses on delivering effective dental treatments while ensuring a comfortable and positive experience for every patient, helping them maintain healthy and confident smiles.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--light); padding:4rem 2rem; text-align:center;">
+  <div class="section-title reveal" style="margin-bottom:1.5rem;">
+    <h2>Book an Appointment</h2>
+    <p>Our experts are ready to give you the best dental care</p>
+  </div>
+  <div class="reveal" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+    <a href="index.html#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <a href="https://wa.me/917694959759" target="_blank" class="btn" style="background:white; color:var(--dark); border:1.5px solid var(--border);">
+      <i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Pearly White">
+      <h3>Pearly White Dental Clinic</h3>
+      <p>Your trusted partner in oral health. We combine compassionate care with the latest dental technology.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/917694959759" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/pearlywhitedentalclinic2021/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Root Canal</a></li>
+        <li><a href="index.html#services">Dental Implants</a></li>
+        <li><a href="index.html#services">Teeth Whitening</a></li>
+        <li><a href="index.html#services">Braces</a></li>
+        <li><a href="index.html#services">Kids Dentistry</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+917694959759">+91 76949 59759</a></li>
+        <li><a href="mailto:info@pearlywhite.in">info@pearlywhite.in</a></li>
+        <li><a href="https://www.pearlywhite.in">www.pearlywhite.in</a></li>
+        <li><a href="index.html#location">Limbodi, Indore MP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Dr. Pooja's Pearly White Dental Clinic. All rights reserved.</span>
+    <span>Website by <a href="https://wa.me/919098350633" target="_blank">GrowMore</a> | Any query? <a href="tel:+919098350633">9098350633</a></span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
